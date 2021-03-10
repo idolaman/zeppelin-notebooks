@@ -52,45 +52,6 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%sh\nls\n",
-      "user": "anonymous",
-      "dateUpdated": "2021-03-10 19:57:00.454",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "sh",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": false
-        },
-        "editorMode": "ace/mode/sh"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "bin\nconf\ninterpreter\nlib\nLICENSE\nlicenses\nlocal-repo\nlogs\nnotebook\nNOTICE\npeople.csv\nREADME.md\nrun\nspark\nwebapps\nzeppelin-web-0.8.0.war\n"
-          }
-        ]
-      },
-      "apps": [],
-      "jobName": "paragraph_1615405057633_-1889067299",
-      "id": "20210310-193737_577693790",
-      "dateCreated": "2021-03-10 19:37:37.633",
-      "dateStarted": "2021-03-10 19:57:00.563",
-      "dateFinished": "2021-03-10 19:57:00.874",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
       "text": "%spark.pyspark\n\ncolumns \u003d [\"name\",\"age\", \"fav_food\"]\ndata \u003d [(\"ben\", \"22\", \"cus\"), (\"ido\", \"21\", \"salami\"), (\"dor\", \"22\", \"port\")]\n\ndf \u003d spark.createDataFrame(data).toDF(*columns)\n\n#df \u003d spark.read.csv(\"people.csv\")\ndf.createOrReplaceTempView(\"people\")\n",
       "user": "anonymous",
       "dateUpdated": "2021-03-10 20:07:38.844",
