@@ -1,0 +1,261 @@
+{
+  "paragraphs": [
+    {
+      "text": "%spark.pyspark\n\ndef mod(x):\n    return (x, 5)\n\nrdd \u003d sc.parallelize(range(1000)).map(mod).take(10)\nprint rdd",
+      "user": "anonymous",
+      "dateUpdated": "2021-03-10 20:00:33.054",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "[(0, 5), (1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (6, 5), (7, 5), (8, 5), (9, 5)]\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://326c3b3235c9:4040/jobs/job?id\u003d6"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1615404889735_-1305028362",
+      "id": "20210310-193449_1831526587",
+      "dateCreated": "2021-03-10 19:34:49.735",
+      "dateStarted": "2021-03-10 20:00:33.114",
+      "dateFinished": "2021-03-10 20:00:33.799",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\nls\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-03-10 19:57:00.454",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "bin\nconf\ninterpreter\nlib\nLICENSE\nlicenses\nlocal-repo\nlogs\nnotebook\nNOTICE\npeople.csv\nREADME.md\nrun\nspark\nwebapps\nzeppelin-web-0.8.0.war\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1615405057633_-1889067299",
+      "id": "20210310-193737_577693790",
+      "dateCreated": "2021-03-10 19:37:37.633",
+      "dateStarted": "2021-03-10 19:57:00.563",
+      "dateFinished": "2021-03-10 19:57:00.874",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\ncolumns \u003d [\"name\",\"age\", \"fav_food\"]\ndata \u003d [(\"ben\", \"22\", \"cus\"), (\"ido\", \"21\", \"salami\"), (\"dor\", \"22\", \"port\")]\n\ndf \u003d spark.createDataFrame(data).toDF(*columns)\n\n#df \u003d spark.read.csv(\"people.csv\")\ndf.createOrReplaceTempView(\"people\")\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-03-10 20:07:38.844",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1615405742809_1470594145",
+      "id": "20210310-194902_990959286",
+      "dateCreated": "2021-03-10 19:49:02.810",
+      "dateStarted": "2021-03-10 20:07:38.922",
+      "dateFinished": "2021-03-10 20:07:42.327",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.sql\n\nselect * from people",
+      "user": "anonymous",
+      "dateUpdated": "2021-03-10 20:08:44.522",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "name": "string",
+                      "age": "string",
+                      "fav_food": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "name",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "age",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "name\tage\tfav_food\nben\t22\tcus\nido\t21\tsalami\ndor\t22\tport\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://326c3b3235c9:4040/jobs/job?id\u003d9",
+            "http://326c3b3235c9:4040/jobs/job?id\u003d10",
+            "http://326c3b3235c9:4040/jobs/job?id\u003d11"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1615406310604_1674097238",
+      "id": "20210310-195830_1521148109",
+      "dateCreated": "2021-03-10 19:58:30.604",
+      "dateStarted": "2021-03-10 20:07:48.525",
+      "dateFinished": "2021-03-10 20:07:52.332",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.sql\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-03-10 20:07:48.409",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1615406868406_-1195195626",
+      "id": "20210310-200748_1055309191",
+      "dateCreated": "2021-03-10 20:07:48.407",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "idola",
+  "id": "2FYP8RHJH",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "sh:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
