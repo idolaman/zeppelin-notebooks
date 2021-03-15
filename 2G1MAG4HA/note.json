@@ -1,0 +1,67 @@
+{
+  "paragraphs": [
+    {
+      "text": "%spark.pyspark\n\ncolumns \u003d [\"cmd\",\"ip\", \"host\"]\ndata \u003d [(\"C:\\\\Windows\\system32\\psexec.exe\", \"1.1.1.1\", \"idola\"), \n        (\"C:\\\\Window\\explorer.exe\", \"2.2.2.2\", \"german\"),\n        (\"C:\\\\folder\\psexec.exe\", \"1.2.1.2\", \"buhadana\"),\n        (\"C:\\\\folder2\\ping.exe\", \"8.8.8.8\", \"googledns\"),\n        (\"C:\\\\Windows\\system32\\psexec.exe\", \"100.100.100.12\", \"kafka01-test\"),\n        (\"C:\\\\Windows\\system32\\psexec.exe\", \"100.100.100.11\", \"kafka02-test\")]\n\ndf \u003d spark.createDataFrame(data).toDF(*columns)\ndf.createOrReplaceTempView(\"events\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-03-15 22:31:09.770",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1615840789236_-515447181",
+      "id": "20210315-203949_1441171460",
+      "dateCreated": "2021-03-15 20:39:49.236",
+      "dateStarted": "2021-03-15 22:31:09.816",
+      "dateFinished": "2021-03-15 22:31:10.427",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-03-15 20:40:55.033",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1615840855024_1120466235",
+      "id": "20210315-204055_1791860276",
+      "dateCreated": "2021-03-15 20:40:55.024",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Load Data",
+  "id": "2G1MAG4HA",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "python:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
