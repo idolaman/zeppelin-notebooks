@@ -1,21 +1,24 @@
 {
   "paragraphs": [
     {
-      "text": "%spark.pyspark\n\ndef mod(x):\n    return (x, 5)\n\nrdd \u003d sc.parallelize(range(1000)).map(mod).take(10)\nprint rdd",
+      "text": "%md\n## Process create: PSEXEC\n\n##### Purpose: Alert when computer runs psexec\n##### Exceptions: kafka servers who do psexec 2 times a day\n##### Global functions: ReturnWhenRuns(String command) -\u003e return columns with specified command",
       "user": "anonymous",
-      "dateUpdated": "2021-03-10 20:00:33.054",
+      "dateUpdated": "2021-03-15 20:44:17.050",
       "config": {
         "colWidth": 12.0,
-        "fontSize": 9.0,
+        "fontSize": 14.0,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "python",
-          "editOnDblClick": false,
+          "language": "markdown",
+          "editOnDblClick": true,
           "completionKey": "TAB",
-          "completionSupport": true
+          "completionSupport": false
         },
-        "editorMode": "ace/mode/python"
+        "editorMode": "ace/mode/markdown",
+        "tableHide": false,
+        "title": false,
+        "editorHide": true
       },
       "settings": {
         "params": {},
@@ -25,70 +28,24 @@
         "code": "SUCCESS",
         "msg": [
           {
-            "type": "TEXT",
-            "data": "[(0, 5), (1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (6, 5), (7, 5), (8, 5), (9, 5)]\n"
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eProcess create: PSEXEC\u003c/h2\u003e\n\u003ch5\u003ePurpose: Alert when computer runs psexec\u003c/h5\u003e\n\u003ch5\u003eExceptions: kafka servers who do psexec 2 times a day\u003c/h5\u003e\n\u003ch5\u003eGlobal functions: ReturnWhenRuns(String command) -\u0026gt; return columns with specified command\u003c/h5\u003e\n\u003c/div\u003e"
           }
         ]
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://326c3b3235c9:4040/jobs/job?id\u003d6"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
       "apps": [],
-      "jobName": "paragraph_1615404889735_-1305028362",
-      "id": "20210310-193449_1831526587",
-      "dateCreated": "2021-03-10 19:34:49.735",
-      "dateStarted": "2021-03-10 20:00:33.114",
-      "dateFinished": "2021-03-10 20:00:33.799",
+      "jobName": "paragraph_1615469241325_1798871627",
+      "id": "20210311-132721_737756689",
+      "dateCreated": "2021-03-11 13:27:21.326",
+      "dateStarted": "2021-03-15 20:44:17.078",
+      "dateFinished": "2021-03-15 20:44:17.128",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%spark.pyspark\n\ncolumns \u003d [\"name\",\"age\", \"fav_food\"]\ndata \u003d [(\"ben\", \"22\", \"cus\"), (\"ido\", \"21\", \"salami\"), (\"dor\", \"22\", \"port\")]\n\ndf \u003d spark.createDataFrame(data).toDF(*columns)\n\n#df \u003d spark.read.csv(\"people.csv\")\ndf.createOrReplaceTempView(\"people\")\n",
+      "text": "%spark.sql\n\nselect * from people where ReturnWhenRuns(people.cmd, \"psexec\")",
       "user": "anonymous",
-      "dateUpdated": "2021-03-10 20:07:38.844",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "python",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/python"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": []
-      },
-      "apps": [],
-      "jobName": "paragraph_1615405742809_1470594145",
-      "id": "20210310-194902_990959286",
-      "dateCreated": "2021-03-10 19:49:02.810",
-      "dateStarted": "2021-03-10 20:07:38.922",
-      "dateFinished": "2021-03-10 20:07:42.327",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%spark.sql\n\nselect * from people",
-      "user": "anonymous",
-      "dateUpdated": "2021-03-10 20:08:44.522",
+      "dateUpdated": "2021-03-15 21:14:39.381",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -101,12 +58,60 @@
               "optionOpen": false,
               "setting": {
                 "table": {
-                  "tableGridState": {},
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "name",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "age",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {
+                          "priority": 0.0,
+                          "direction": "desc"
+                        },
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "fav_food",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1.0,
+                      "paginationPageSize": 250.0
+                    }
+                  },
                   "tableColumnTypeState": {
                     "names": {
-                      "name": "string",
-                      "age": "string",
-                      "fav_food": "string"
+                      "cmd": "string",
+                      "ip": "string",
+                      "host": "string"
                     },
                     "updated": false
                   },
@@ -152,7 +157,8 @@
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/sql",
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -163,7 +169,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "name\tage\tfav_food\nben\t22\tcus\nido\t21\tsalami\ndor\t22\tport\n"
+            "data": "cmd\tip\thost\nC:\\Windows\\system32\\psexec.exe\t1.1.1.1\tidola\nC:\\folder\\psexec.exe\t1.2.1.2\tbuhadana\n"
           }
         ]
       },
@@ -174,9 +180,9 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://326c3b3235c9:4040/jobs/job?id\u003d9",
-            "http://326c3b3235c9:4040/jobs/job?id\u003d10",
-            "http://326c3b3235c9:4040/jobs/job?id\u003d11"
+            "http://326c3b3235c9:4040/jobs/job?id\u003d29",
+            "http://326c3b3235c9:4040/jobs/job?id\u003d30",
+            "http://326c3b3235c9:4040/jobs/job?id\u003d31"
           ],
           "interpreterSettingId": "spark"
         }
@@ -185,34 +191,18 @@
       "jobName": "paragraph_1615406310604_1674097238",
       "id": "20210310-195830_1521148109",
       "dateCreated": "2021-03-10 19:58:30.604",
-      "dateStarted": "2021-03-10 20:07:48.525",
-      "dateFinished": "2021-03-10 20:07:52.332",
+      "dateStarted": "2021-03-15 21:14:37.793",
+      "dateFinished": "2021-03-15 21:14:39.185",
       "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%spark.sql\n",
-      "user": "anonymous",
-      "dateUpdated": "2021-03-10 20:07:48.409",
-      "config": {},
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "apps": [],
-      "jobName": "paragraph_1615406868406_-1195195626",
-      "id": "20210310-200748_1055309191",
-      "dateCreated": "2021-03-10 20:07:48.407",
-      "status": "READY",
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "idola",
+  "name": "Process create: PSEXEC",
   "id": "2FYP8RHJH",
   "noteParams": {},
   "noteForms": {},
   "angularObjects": {
-    "sh:shared_process": [],
+    "md:shared_process": [],
     "spark:shared_process": []
   },
   "config": {
