@@ -1,0 +1,44 @@
+{
+  "paragraphs": [
+    {
+      "text": "%spark\n\n#simple filter function\n@F.udf(returnType\u003dBooleanType())\ndef my_filter(x):\n    print(x)\n    return true\n\nmy_filter_udf \u003d udf(lambda r: my_filter(r), BooleanType())\n\nspark.udf.register(\"ReturnWhenRuns\", convertCase,StringType())\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-03-15 20:48:25.915",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1615840774260_-1164472208",
+      "id": "20210315-203934_2145410127",
+      "dateCreated": "2021-03-15 20:39:34.261",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Global functions",
+  "id": "2G1HWBUA6",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
