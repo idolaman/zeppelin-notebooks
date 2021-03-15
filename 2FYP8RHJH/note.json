@@ -1,9 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n## Process create: PSEXEC\n\n##### Purpose: Alert when computer runs psexec\n##### Exceptions: kafka servers who do psexec 2 times a day\n##### Global functions: ReturnWhenRuns(String command) -\u003e return columns with specified command",
+      "text": "%md\n## Process create: PSEXEC\n\n##### Purpose: Alert when computer runs psexec\n##### Exceptions: kafka servers who do psexec 2 times a day\n##### Global functions: \n##### - ReturnWhenRuns(column_command, specified_command) -\u003e return columns with specified command\n##### - FilterByCSVField(specified_csv, field) -\u003e Filter field by source controled csv",
       "user": "anonymous",
-      "dateUpdated": "2021-03-15 20:44:17.050",
+      "dateUpdated": "2021-03-15 22:28:50.419",
       "config": {
         "colWidth": 12.0,
         "fontSize": 14.0,
@@ -29,7 +29,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eProcess create: PSEXEC\u003c/h2\u003e\n\u003ch5\u003ePurpose: Alert when computer runs psexec\u003c/h5\u003e\n\u003ch5\u003eExceptions: kafka servers who do psexec 2 times a day\u003c/h5\u003e\n\u003ch5\u003eGlobal functions: ReturnWhenRuns(String command) -\u0026gt; return columns with specified command\u003c/h5\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eProcess create: PSEXEC\u003c/h2\u003e\n\u003ch5\u003ePurpose: Alert when computer runs psexec\u003c/h5\u003e\n\u003ch5\u003eExceptions: kafka servers who do psexec 2 times a day\u003c/h5\u003e\n\u003ch5\u003eGlobal functions:\u003c/h5\u003e\n\u003ch5\u003e- ReturnWhenRuns(column_command, specified_command) -\u0026gt; return columns with specified command\u003c/h5\u003e\n\u003ch5\u003e- FilterByCSVField(specified_csv, field) -\u0026gt; Filter field by source controled csv\u003c/h5\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -37,15 +37,15 @@
       "jobName": "paragraph_1615469241325_1798871627",
       "id": "20210311-132721_737756689",
       "dateCreated": "2021-03-11 13:27:21.326",
-      "dateStarted": "2021-03-15 20:44:17.078",
-      "dateFinished": "2021-03-15 20:44:17.128",
+      "dateStarted": "2021-03-15 22:28:50.425",
+      "dateFinished": "2021-03-15 22:28:50.506",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%spark.sql\n\nselect * from people where ReturnWhenRuns(people.cmd, \"psexec\")",
+      "text": "%spark.sql\n\nselect * from events where FilterByCSVField(events.ip, \"kafkapsexec.csv\") and ReturnWhenRuns(events.cmd, \"psexec\")",
       "user": "anonymous",
-      "dateUpdated": "2021-03-15 21:14:39.381",
+      "dateUpdated": "2021-03-15 22:31:17.315",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -61,7 +61,7 @@
                   "tableGridState": {
                     "columns": [
                       {
-                        "name": "name",
+                        "name": "cmd",
                         "visible": true,
                         "width": "*",
                         "sort": {},
@@ -71,20 +71,17 @@
                         "pinned": ""
                       },
                       {
-                        "name": "age",
+                        "name": "ip",
                         "visible": true,
                         "width": "*",
-                        "sort": {
-                          "priority": 0.0,
-                          "direction": "desc"
-                        },
+                        "sort": {},
                         "filters": [
                           {}
                         ],
                         "pinned": ""
                       },
                       {
-                        "name": "fav_food",
+                        "name": "host",
                         "visible": true,
                         "width": "*",
                         "sort": {},
@@ -129,24 +126,18 @@
                     "degree": "-45"
                   },
                   "xLabelStatus": "default"
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
                 }
               },
               "commonSetting": {},
-              "keys": [
-                {
-                  "name": "name",
-                  "index": 0.0,
-                  "aggr": "sum"
-                }
-              ],
+              "keys": [],
               "groups": [],
-              "values": [
-                {
-                  "name": "age",
-                  "index": 1.0,
-                  "aggr": "sum"
-                }
-              ]
+              "values": []
             },
             "helium": {}
           }
@@ -180,9 +171,9 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://326c3b3235c9:4040/jobs/job?id\u003d29",
-            "http://326c3b3235c9:4040/jobs/job?id\u003d30",
-            "http://326c3b3235c9:4040/jobs/job?id\u003d31"
+            "http://326c3b3235c9:4040/jobs/job?id\u003d57",
+            "http://326c3b3235c9:4040/jobs/job?id\u003d58",
+            "http://326c3b3235c9:4040/jobs/job?id\u003d59"
           ],
           "interpreterSettingId": "spark"
         }
@@ -191,9 +182,25 @@
       "jobName": "paragraph_1615406310604_1674097238",
       "id": "20210310-195830_1521148109",
       "dateCreated": "2021-03-10 19:58:30.604",
-      "dateStarted": "2021-03-15 21:14:37.793",
-      "dateFinished": "2021-03-15 21:14:39.185",
+      "dateStarted": "2021-03-15 22:31:17.374",
+      "dateFinished": "2021-03-15 22:31:19.416",
       "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.sql\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-03-15 22:14:16.255",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1615846456253_-323405539",
+      "id": "20210315-221416_1030940660",
+      "dateCreated": "2021-03-15 22:14:16.253",
+      "status": "READY",
       "progressUpdateIntervalMs": 500
     }
   ],
@@ -203,6 +210,7 @@
   "noteForms": {},
   "angularObjects": {
     "md:shared_process": [],
+    "python:shared_process": [],
     "spark:shared_process": []
   },
   "config": {
