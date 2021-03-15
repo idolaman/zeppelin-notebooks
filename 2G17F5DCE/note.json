@@ -1,0 +1,157 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n## Process create: ping\n\n##### Purpose: Alert when computer runs ping\n##### Exceptions: None\n##### Global functions: ReturnWhenRuns(String command) -\u003e return columns with specified command",
+      "user": "anonymous",
+      "dateUpdated": "2021-03-15 22:31:35.007",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eProcess create: ping\u003c/h2\u003e\n\u003ch5\u003ePurpose: Alert when computer runs ping\u003c/h5\u003e\n\u003ch5\u003eExceptions: None\u003c/h5\u003e\n\u003ch5\u003eGlobal functions: ReturnWhenRuns(String command) -\u0026gt; return columns with specified command\u003c/h5\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1615840825557_-1084367867",
+      "id": "20210315-204025_869063590",
+      "dateCreated": "2021-03-15 20:40:25.557",
+      "dateStarted": "2021-03-15 22:31:35.009",
+      "dateFinished": "2021-03-15 22:31:35.057",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.sql\n\nselect * from events where ReturnWhenRuns(events.cmd, \"ping\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-03-15 22:31:55.005",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "cmd": "string",
+                      "ip": "string",
+                      "host": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "cmd\tip\thost\nC:\\folder2\\ping.exe\t8.8.8.8\tgoogledns\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://326c3b3235c9:4040/jobs/job?id\u003d63",
+            "http://326c3b3235c9:4040/jobs/job?id\u003d64",
+            "http://326c3b3235c9:4040/jobs/job?id\u003d65"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1615843122955_-162425018",
+      "id": "20210315-211842_1317525358",
+      "dateCreated": "2021-03-15 21:18:42.956",
+      "dateStarted": "2021-03-15 22:31:55.065",
+      "dateFinished": "2021-03-15 22:31:56.189",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.sql\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-03-15 21:19:32.490",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1615843172490_-1136728026",
+      "id": "20210315-211932_692650976",
+      "dateCreated": "2021-03-15 21:19:32.490",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Process create: ping",
+  "id": "2G17F5DCE",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "python:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
