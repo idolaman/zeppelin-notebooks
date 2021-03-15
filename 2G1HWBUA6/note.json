@@ -40,9 +40,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%spark.pyspark\nfrom pyspark.sql.functions import udf\nfrom pyspark.sql.types import BooleanType\nimport pandas as pd\n\n# The function filter columns by specified field with csv\n\ndef FilterByCSVFieldFunc(specified_csv, ip):\n    df \u003d pd.read_csv(\u0027https://raw.githubusercontent.com/idolaman/global_csvs/main/\u0027 + specified_csv)\n    for csv_ip in df.ip:\n        if csv_ip \u003d\u003d ip:\n            return True\n    return False\n    \n\nFilterByCSVField \u003d udf(FilterByCSVFieldFunc, BooleanType())\nspark.udf.register(\"FilterByCSVField\", FilterByCSVField)\n",
+      "text": "%spark.pyspark\nfrom pyspark.sql.functions import udf\nfrom pyspark.sql.types import BooleanType\nimport urllib2\n\n# The function filter columns by specified field with csv\n\ndef FilterByCSVFieldFunc(field, specified_csv):\n    data \u003d urllib2.urlopen(\u0027https://raw.githubusercontent.com/idolaman/global_csvs/main/\u0027 + specified_csv).read()\n    return field not in data\n    \nFilterByCSVField \u003d udf(FilterByCSVFieldFunc, BooleanType())\nspark.udf.register(\"FilterByCSVField\", FilterByCSVField)\n",
       "user": "anonymous",
-      "dateUpdated": "2021-03-15 22:12:09.651",
+      "dateUpdated": "2021-03-15 22:29:13.016",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -65,7 +65,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\u003cfunction FilterByCSVFieldFunc at 0x7f18b80a38c0\u003e\n"
+            "data": "\u003cfunction FilterByCSVFieldFunc at 0x7f18b6d76320\u003e\n"
           }
         ]
       },
@@ -73,24 +73,24 @@
       "jobName": "paragraph_1615841488417_198000731",
       "id": "20210315-205128_1190153844",
       "dateCreated": "2021-03-15 20:51:28.418",
-      "dateStarted": "2021-03-15 22:12:09.727",
-      "dateFinished": "2021-03-15 22:12:10.322",
+      "dateStarted": "2021-03-15 22:29:13.068",
+      "dateFinished": "2021-03-15 22:29:13.482",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%python\n",
+      "text": "%spark.sql\n",
       "user": "anonymous",
-      "dateUpdated": "2021-03-15 21:57:37.006",
+      "dateUpdated": "2021-03-15 22:23:04.653",
       "config": {},
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1615845457002_-998829359",
-      "id": "20210315-215737_1314743485",
-      "dateCreated": "2021-03-15 21:57:37.003",
+      "jobName": "paragraph_1615846984652_790500903",
+      "id": "20210315-222304_2003855793",
+      "dateCreated": "2021-03-15 22:23:04.653",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
