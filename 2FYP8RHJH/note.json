@@ -3,7 +3,7 @@
     {
       "text": "%md\n## Process create: PSEXEC\n\n##### Purpose: Alert when computer runs psexec\n##### Exceptions: kafka servers who do psexec 2 times a day\n##### Global functions: \n##### - ReturnWhenRuns(column_command, specified_command) -\u003e return columns with specified command\n##### - FilterByCSVField(specified_csv, field) -\u003e Filter field by source controled csv",
       "user": "anonymous",
-      "dateUpdated": "2021-03-15 22:28:50.419",
+      "dateUpdated": "2021-03-16 15:17:57.781",
       "config": {
         "colWidth": 12.0,
         "fontSize": 14.0,
@@ -37,15 +37,15 @@
       "jobName": "paragraph_1615469241325_1798871627",
       "id": "20210311-132721_737756689",
       "dateCreated": "2021-03-11 13:27:21.326",
-      "dateStarted": "2021-03-15 22:28:50.425",
-      "dateFinished": "2021-03-15 22:28:50.506",
+      "dateStarted": "2021-03-16 15:17:57.789",
+      "dateFinished": "2021-03-16 15:17:57.831",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%spark.sql\n\nselect * from events where FilterByCSVField(events.ip, \"kafkapsexec.csv\") and ReturnWhenRuns(events.cmd, \"psexec\")",
+      "text": "%spark.sql\n\nselect * from events where FilterByCSVField(events.ip, \"kafkapsexec.csv\") and ReturnWhenRuns(events.cmd, \"psexec.exe\")",
       "user": "anonymous",
-      "dateUpdated": "2021-03-15 22:31:17.315",
+      "dateUpdated": "2021-03-16 15:26:21.035",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -188,18 +188,101 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "%spark.sql\n\nselect * from events\n\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-03-16 15:22:29.241",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "cmd": "string",
+                      "ip": "string",
+                      "host": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "cmd\tip\thost\nC:\\Windows\\system32\\psexec.exe\t1.1.1.1\tidola\nC:\\Window\\explorer.exe\t2.2.2.2\tgerman\nC:\\folder\\psexec.exe\t1.2.1.2\tbuhadana\nC:\\folder2\\ping.exe\t8.8.8.8\tgoogledns\nC:\\Windows\\system32\\psexec.exe\t100.100.100.12\tkafka01-test\nC:\\Windows\\system32\\psexec.exe\t100.100.100.11\tkafka02-test\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://326c3b3235c9:4040/jobs/job?id\u003d66",
+            "http://326c3b3235c9:4040/jobs/job?id\u003d67",
+            "http://326c3b3235c9:4040/jobs/job?id\u003d68"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1615846456253_-323405539",
+      "id": "20210315-221416_1030940660",
+      "dateCreated": "2021-03-15 22:14:16.253",
+      "dateStarted": "2021-03-16 15:22:19.286",
+      "dateFinished": "2021-03-16 15:22:28.698",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "%spark.sql\n",
       "user": "anonymous",
-      "dateUpdated": "2021-03-15 22:14:16.255",
+      "dateUpdated": "2021-03-16 15:22:19.238",
       "config": {},
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1615846456253_-323405539",
-      "id": "20210315-221416_1030940660",
-      "dateCreated": "2021-03-15 22:14:16.253",
+      "jobName": "paragraph_1615908139236_1402050189",
+      "id": "20210316-152219_78449194",
+      "dateCreated": "2021-03-16 15:22:19.236",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
